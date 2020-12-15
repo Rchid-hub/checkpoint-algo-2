@@ -1,0 +1,104 @@
+FUNCTION problem1solution1(array1[],array2[]){
+let sum=0;
+// fusion the two arrays into one 
+let arr3= array1.concat(array2);
+// loop through the array and compare one single element to others
+for(let i=0;i<arr3.length;i++){
+    for(let j=i+1;j<arr3.length;j++){
+// remove duplicates from the array 
+        if(arr3[i]===arr3[j]){
+        delete arr3[i];
+        delete arr3[j];           
+ break;
+        }  
+    }
+}
+// loop through the array to calculate sum
+for(let k=0;k<arr3.length;k++){
+    if(!isNaN(arr3[k]))
+    sum+=arr3[k];
+}
+console.log(sum);
+}
+
+FUNCTION problem1solution2(array1[],array2[]){
+let sum=0;
+let count=0;
+//fusing the two arrays into one 
+arr3=array1.concat(array2);
+var htab={
+    number:count
+};
+
+// loop through the array and compare one single element to others
+for(let i=0;i<arr3.length;i++){
+
+       // adding array elements as keys and their count as values to hashtable
+     htab.number = arr3[i];
+    for(let j=i+1;j<arr3.length;j++){
+        //counting the number of occurence of an element and assiging it to "count"
+        if(arr3[i]===arr3[j]){
+        htab.number.count=2;
+        }else
+        htab.number.count=1;
+}
+}
+//loop through hashmap to calculate sum
+for(let elem in htab){
+    if (elem.count==1){
+        sum+=elem;
+    }
+}
+return sum;
+}
+
+
+FUNCTION problem2solution1(array1[],array2[]){
+let sum=0;
+// fusion the two arrays into one 
+let arr3= array1.concat(array2);
+// loop through the array and compare one single element to others
+for(let i=0;i<arr3.length;i++){
+    for(let j=i+1;j<arr3.length;j++){
+// sum up duplicates from the array 
+
+        if(arr3[i]===arr3[j]){
+            sum+=(arr3[j]+arr3[i]);
+            break;
+        } 
+return(sum);
+        }}
+
+
+FUNCTION problem1solution2(array1[],array2[]){
+let sum=0;
+let count=0;
+//fusing the two arrays into one 
+arr3=array1.concat(array2);
+var htab={
+    number:count
+};
+
+// loop through the array and compare one single element to others
+for(let i=0;i<arr3.length;i++){
+
+       // adding array elements as keys and their count as values to hashtable
+     htab.number = arr3[i];
+    for(let j=i+1;j<arr3.length;j++){
+        //counting the number of occurence of an element and assiging it to "count"
+        if(arr3[i]===arr3[j]){
+        htab.number.count=2;
+        }else
+        htab.number.count=1;
+}
+}
+//loop through hashmap to calculate sum
+for(let elem in htab){
+    if (elem.count==2){
+        sum+=elem;
+    }
+}
+return sum;
+}
+
+
